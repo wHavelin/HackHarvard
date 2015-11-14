@@ -1,9 +1,11 @@
 package com.example.researchbeast.myspectrum;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 
@@ -39,5 +41,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void viewHistory(View v){
+        startActivity(new Intent(MainActivity.this, viewHistory.class));
     }
 }

@@ -1,16 +1,52 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/transition">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer_view_container"
+    <LinearLayout
+        android:id="@+id/anim_container"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"/>
+
+    <TextView
+        android:id="@+id/intro_main_textview"
+        android:text="@string/title_text"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"/>
+
+    <Button
+        android:id="@+id/next_btn"
+        android:text="Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -21,7 +57,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="48dp" />
+        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -31,28 +69,8 @@
         android:layout_alignTop="@+id/newEventBtn"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="viewHistory" />
-
-    <TextView
-        android:id="@+id/welcomeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome"
-        android:textSize="35sp"
-        android:layout_below="@+id/shimmer_view_container"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="20dp"/>
-
-    <TextView
-        android:id="@+id/intro_main_textview"
-        android:text="@string/title_text"
-        android:textSize="17sp"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/welcomeTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"/>
+        android:onClick="viewHistory"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
 
 </RelativeLayout>

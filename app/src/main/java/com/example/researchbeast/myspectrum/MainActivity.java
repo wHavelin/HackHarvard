@@ -1,28 +1,71 @@
 package com.example.researchbeast.myspectrum;
 
 import android.content.Intent;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
-
-import com.facebook.shimmer.ShimmerFrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     @Bind(R.id.newEventBtn) Button mNewEventButton;
+    @Bind(R.id.viewHistoryBtn) Button mViewHistoryButton;
+    @Bind(R.id.next_btn) Button mNextButton;
+    @Bind(R.id.welcomeTextView) TextView mWelcomeText;
+    @Bind(R.id.intro_main_textview) TextView mIntroText;
+    @Bind(R.id.anim_container) LinearLayout mAnimLayout;
+
+    final Animation in = new AlphaAnimation(0.0f, 1.0f);
+
+    final Animation out = new AlphaAnimation(1.0f, 0.0f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        in.setDuration(870);
+        out.setDuration(870);
+        out.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                mNextButton.setVisibility(View.GONE);
+                mWelcomeText.setVisibility(View.GONE);
+                mIntroText.setVisibility(View.GONE);
+                mViewHistoryButton.setVisibility(View.VISIBLE);
+                mNewEventButton.setVisibility(View.VISIBLE);
+                mViewHistoryButton.startAnimation(in);
+                mNewEventButton.startAnimation(in);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+
+        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        // run shimmer animation
-        ShimmerFrameLayout container = (ShimmerFrameLayout) findViewById(R.id.shimmer_view_container);
-        container.startShimmerAnimation();
+        final TransitionDrawable transition = (TransitionDrawable) getWindow().findViewById(R.id.rootView).getBackground();
+
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAnimLayout.startAnimation(out);
+                transition.startTransition(980);
+            }
+        });
     }
 
     @Override

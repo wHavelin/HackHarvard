@@ -8,7 +8,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,8 +32,12 @@ public class viewHistory extends AppCompatActivity {
 
         String[] myStringArray = {"something", "somethingElse", "third", "fgd"};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, myStringArray);
+        NewEventModel event1 = new NewEventModel("12-12-12", "12:00", "something", "6");
+        NewEventModel event2 = new NewEventModel("12-14-12", "12:00", "something", "8");
+
+        NewEventModel[] myEventArray = {event1, event2};
+
+        EventListAdapter adapter = new EventListAdapter(this, myEventArray);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_history);

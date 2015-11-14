@@ -23,4 +23,24 @@
             android:text="MySpectrum"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Event"
+        android:id="@+id/newEventBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="44dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View History"
+        android:id="@+id/viewHistoryBtn"
+        android:layout_alignTop="@+id/newEventBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="viewHistory" />
 </RelativeLayout>

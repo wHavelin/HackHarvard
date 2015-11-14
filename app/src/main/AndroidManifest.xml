@@ -16,6 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".EventListActivity"
+            android:label="@string/title_event_list"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.researchbeast.myspectrum.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EventDetailActivity"
+            android:label="@string/title_event_detail"
+            android:parentActivityName=".EventListActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.researchbeast.myspectrum.EventListActivity" />
+        </activity>
     </application>
 
 </manifest>

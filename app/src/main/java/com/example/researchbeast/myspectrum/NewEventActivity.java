@@ -35,6 +35,7 @@ public class NewEventActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Record Event");
         setDateTime();
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override

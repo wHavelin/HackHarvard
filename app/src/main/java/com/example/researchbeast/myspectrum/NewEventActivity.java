@@ -4,10 +4,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.researchbeast.myspectrum.models.NewEventModel;
 import com.facebook.stetho.Stetho;
@@ -22,6 +24,7 @@ public class NewEventActivity extends AppCompatActivity {
     @Bind(R.id.rating_edittext) EditText mRatingEditText;
     @Bind(R.id.notes_edittext) EditText mNotesEditText;
     @Bind(R.id.save_button) Button mSaveButton;
+    @Bind(R.id.toolbar) Toolbar mToolbar;
     SharedPreferences mPrefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,8 @@ public class NewEventActivity extends AppCompatActivity {
         Stetho.initializeWithDefaults(this);
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         ButterKnife.bind(this);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setDateTime();
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,16 +49,29 @@ public class NewEventActivity extends AppCompatActivity {
                 String json = gson.toJson(eventModel);
                 mPrefEdit.putString(date + time, json);
                 mPrefEdit.commit();
+                Toast.makeText(getApplicationContext(),"Saved",Toast.LENGTH_SHORT).show();
+                goBack();
             }
         });
     }
 
+    /**
+     * Sets current date and time to the edit text's
+     */
     private void setDateTime() {
         Time today = new Time(Time.getCurrentTimezone());
         today.setToNow();
 
         mDateEditText.setText(String.format("%d / %d / %d", today.month, today.monthDay, today.year));
-        mTimeEditText.setText(String.format("%d:%d",today.hour,today.minute));
+        mTimeEditText.setText(String.format("%d:%d", today.hour, today.minute));
+    }
+
+    /**
+     * Go back to the main activity
+     */
+    private void goBack() {
+        onBackPressed();
+        this.finish();
     }
 
 }

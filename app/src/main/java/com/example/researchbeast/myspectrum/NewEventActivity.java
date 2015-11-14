@@ -46,7 +46,7 @@ public class NewEventActivity extends AppCompatActivity {
                 String time = mTimeEditText.getText().toString();
                 String rating = mRatingEditText.getText().toString();
                 String notes = mNotesEditText.getText().toString();
-                NewEventModel eventModel = new NewEventModel(date,time,rating,notes);
+                NewEventModel eventModel = new NewEventModel(date,time,"0", rating,notes);
                 String json = gson.toJson(eventModel);
                 mPrefEdit.putString(date + time, json);
                 mPrefEdit.commit();

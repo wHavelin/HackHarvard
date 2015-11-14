@@ -11,6 +11,8 @@ import com.example.researchbeast.myspectrum.models.NewEventModel;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
@@ -34,6 +36,8 @@ public class ViewHistoryActivity extends AppCompatActivity {
             NewEventModel model =  gson.fromJson((String) entries.get(key), NewEventModel.class);
             myEventArray.add(model);
         }
+
+        Collections.sort(myEventArray);
 
         EventListAdapter adapter = new EventListAdapter(this, myEventArray);
 

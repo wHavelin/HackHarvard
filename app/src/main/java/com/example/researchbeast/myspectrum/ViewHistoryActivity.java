@@ -9,12 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.researchbeast.myspectrum.models.NewEventModel;
 import com.google.gson.Gson;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -22,7 +19,7 @@ import java.util.Set;
 
 import static com.example.researchbeast.myspectrum.R.id.eventListView;
 
-public class viewHistory extends AppCompatActivity {
+public class ViewHistoryActivity extends AppCompatActivity {
 
     SharedPreferences mprefs;
 

@@ -11,7 +11,6 @@ import android.widget.Button;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     @Bind(R.id.newEventBtn) Button mNewEventButton;
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewHistory(View v){
-        startActivity(new Intent(MainActivity.this, viewHistory.class));
+        startActivity(new Intent(MainActivity.this, ViewHistoryActivity.class));
     }
 
     public void onNewEventClick(View view) {

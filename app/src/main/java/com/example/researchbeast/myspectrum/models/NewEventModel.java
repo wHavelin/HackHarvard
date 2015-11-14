@@ -7,5 +7,12 @@ public class NewEventModel {
 
     public String notes;
 
-    public Integer rating;
+    public String rating;
+
+    public NewEventModel(String date, String time, String notes, String rating) {
+        this.date = date;
+        this.time = time;
+        this.notes = notes;
+        this.rating = rating;
+    }
 }

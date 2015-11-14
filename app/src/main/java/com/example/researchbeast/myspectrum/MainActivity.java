@@ -6,10 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+    @Bind(R.id.newEventBtn) Button mNewEventButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewHistory(View v){
         startActivity(new Intent(MainActivity.this, viewHistory.class));
+    }
+
+    public void onNewEventClick(View view) {
+        startActivity(new Intent(this, NewEventActivity.class));
     }
 }

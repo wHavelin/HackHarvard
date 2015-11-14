@@ -9,7 +9,7 @@ public class NewEventModel {
 
     public String rating;
 
-    public NewEventModel(String date, String time, String notes, String rating) {
+    public NewEventModel(String date, String time, String rating, String notes) {
         this.date = date;
         this.time = time;
         this.notes = notes;

@@ -9,13 +9,14 @@ import android.widget.TextView;
 
 import com.example.researchbeast.myspectrum.models.NewEventModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by willi on 11/14/2015.
  */
 public class EventListAdapter extends ArrayAdapter<NewEventModel> {
-    public EventListAdapter(Context context, NewEventModel[] objects) {
+    public EventListAdapter(Context context, ArrayList<NewEventModel> objects) {
         super(context, 0, objects);
     }
 

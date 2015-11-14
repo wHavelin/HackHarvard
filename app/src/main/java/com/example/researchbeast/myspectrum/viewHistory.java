@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,19 +26,31 @@ public class viewHistory extends AppCompatActivity {
 
     SharedPreferences mprefs;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         mprefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-        String[] myStringArray = {"something", "somethingElse", "third", "fgd"};
+        Map<String, ?> entries = mprefs.getAll();
+        Set<String> keys = entries.keySet();
+        Gson gson = new Gson();
 
         NewEventModel event1 = new NewEventModel("12-12-12", "12:00", "something", "6");
         NewEventModel event2 = new NewEventModel("12-14-12", "12:00", "something", "8");
 
-        NewEventModel[] myEventArray = {event1, event2};
+        ArrayList<NewEventModel> myEventArray = new ArrayList<NewEventModel>();
+
+
+
+        for(String key : keys) {
+            NewEventModel model =  gson.fromJson((String) entries.get(key), NewEventModel.class);
+            myEventArray.add(model);
+        }
 
         EventListAdapter adapter = new EventListAdapter(this, myEventArray);
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_history);
@@ -59,14 +72,6 @@ public class viewHistory extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // get shared settings
-        Map<String, ?> entries = mprefs.getAll();
-        Set<String> keys = entries.keySet();
-        Gson gson = new Gson();
 
-        for(String key : keys) {
-            NewEventModel model =  gson.fromJson((String) entries.get(key), NewEventModel.class);
-
-            //
-        }
     }
 }

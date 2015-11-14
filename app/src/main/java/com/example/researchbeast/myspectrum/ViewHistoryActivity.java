@@ -1,10 +1,13 @@
 package com.example.researchbeast.myspectrum;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.researchbeast.myspectrum.models.NewEventModel;
@@ -30,7 +33,7 @@ public class ViewHistoryActivity extends AppCompatActivity {
         Set<String> keys = entries.keySet();
         Gson gson = new Gson();
 
-        ArrayList<NewEventModel> myEventArray = new ArrayList<NewEventModel>();
+        final ArrayList<NewEventModel> myEventArray = new ArrayList<NewEventModel>();
 
         for(String key : keys) {
             NewEventModel model =  gson.fromJson((String) entries.get(key), NewEventModel.class);
@@ -49,6 +52,21 @@ public class ViewHistoryActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(eventListView);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent i = new Intent(ViewHistoryActivity.this, ViewEventActivity.class);
+                //If you wanna send any data to nextActicity.class you can use
+                NewEventModel thisModel = myEventArray.get(position);
+                i.putExtra("date",thisModel.date);
+                i.putExtra("time",thisModel.time);
+                i.putExtra("duration","2 hours");
+                i.putExtra("intensity",thisModel.rating);
+                i.putExtra("notes",thisModel.notes);
+                startActivity(i);
+            }
+        });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

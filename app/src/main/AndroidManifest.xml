@@ -15,7 +15,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".NewEventActivity"
@@ -34,6 +33,8 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.researchbeast.myspectrum.MainActivity" />
+        </activity>
+        <activity android:name=".ViewEventActivity" >
         </activity>
     </application>
 

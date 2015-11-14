@@ -31,6 +31,7 @@
             android:id="@+id/time_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:singleLine="true"
             android:hint="Time"/>
     </android.support.design.widget.TextInputLayout>
 
@@ -44,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
+            android:singleLine="true"
             android:hint="Rating"/>
     </android.support.design.widget.TextInputLayout>
 

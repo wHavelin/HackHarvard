@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.next_btn) Button mNextButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeText;
     @Bind(R.id.intro_main_textview) TextView mIntroText;
+    @Bind(R.id.app_name_textview) TextView mAppNameText;
     @Bind(R.id.anim_container) LinearLayout mAnimLayout;
 
     final Animation in = new AlphaAnimation(0.0f, 1.0f);
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        in.setDuration(870);
-        out.setDuration(870);
+        in.setDuration(800);
+        out.setDuration(800);
         out.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -43,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 mWelcomeText.setVisibility(View.GONE);
                 mIntroText.setVisibility(View.GONE);
                 mViewHistoryButton.setVisibility(View.VISIBLE);
-                mNewEventButton.setVisibility(View.VISIBLE);
                 mViewHistoryButton.startAnimation(in);
+                mNewEventButton.setVisibility(View.VISIBLE);
                 mNewEventButton.startAnimation(in);
+                mAppNameText.setVisibility(View.VISIBLE);
+                mAppNameText.startAnimation(in);
             }
 
             @Override
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAnimLayout.startAnimation(out);
-                transition.startTransition(980);
+                transition.startTransition(800);
             }
         });
     }

@@ -1,9 +1,13 @@
 package com.example.researchbeast.myspectrum;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // set font
+        TextView tx = (TextView) findViewById(R.id.textView);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/disciplina.tff");
+        tx.setTypeface(custom_font);
+
+        // run shimmer animation
+        ShimmerFrameLayout container = (ShimmerFrameLayout) findViewById(R.id.shimmer_view_container);
+        container.startShimmerAnimation();
     }
 
     @Override

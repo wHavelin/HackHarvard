@@ -74,6 +74,9 @@
                 android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
         </activity>
         <activity android:name=".activities.InfoSitesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
         </activity>
         <activity android:name=".activities.AboutActivity" >
             <meta-data

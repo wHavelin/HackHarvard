@@ -1,4 +1,4 @@
-package com.example.researchbeast.myspectrum;
+package com.example.researchbeast.myspectrum.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,8 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.researchbeast.myspectrum.svg.AndroidLogoPaths;
-import com.example.researchbeast.myspectrum.svg.AnimatedSvgView;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

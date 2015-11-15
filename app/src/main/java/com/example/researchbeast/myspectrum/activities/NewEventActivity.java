@@ -1,4 +1,4 @@
-package com.example.researchbeast.myspectrum;
+package com.example.researchbeast.myspectrum.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.researchbeast.myspectrum.R;
 import com.example.researchbeast.myspectrum.models.NewEventModel;
 import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 public class NewEventActivity extends AppCompatActivity {
     @Bind(R.id.date_edittext) EditText mDateEditText;
     @Bind(R.id.time_edittext) EditText mTimeEditText;
+    @Bind(R.id.duration_edittext) EditText mDurationEditText;
     @Bind(R.id.rating_edittext) EditText mRatingEditText;
     @Bind(R.id.notes_edittext) EditText mNotesEditText;
     @Bind(R.id.save_button) Button mSaveButton;
@@ -44,9 +46,10 @@ public class NewEventActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 String date = mDateEditText.getText().toString();
                 String time = mTimeEditText.getText().toString();
+                String duration = mDurationEditText.getText().toString();
                 String rating = mRatingEditText.getText().toString();
                 String notes = mNotesEditText.getText().toString();
-                NewEventModel eventModel = new NewEventModel(date,time,rating,notes);
+                NewEventModel eventModel = new NewEventModel(date,time,duration, rating,notes);
                 String json = gson.toJson(eventModel);
                 mPrefEdit.putString(date + time, json);
                 mPrefEdit.commit();

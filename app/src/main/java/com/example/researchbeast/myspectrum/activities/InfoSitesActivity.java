@@ -33,7 +33,7 @@ public class InfoSitesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info_sites);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Sites");
+        getSupportActionBar().setTitle("Info");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ListView listView = (ListView) findViewById(R.id.infoSitesList);

@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.researchbeast.myspectrum.events.StartActivityEvent;
 import com.example.researchbeast.myspectrum.models.CardModel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
@@ -40,7 +42,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.titleTextView.setText(card.title);
         holder.descriptionTextView.setText(card.description);
         holder.drawableResource.setImageResource(card.drawable);
-
+        holder.drawableResource.setTag(card.drawable);
     }
 
     @Override
@@ -48,7 +50,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return mCardModelArray.length;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
         @Bind(R.id.item_name_text) TextView titleTextView;
         @Bind(R.id.item_description_text) TextView descriptionTextView;
         @Bind(R.id.item_image) ImageView drawableResource;
@@ -56,6 +58,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+            itemView.setOnClickListener(this);
+        }
+        // Handles the row being being clicked
+        @Override
+        public void onClick(View view) {
+            ImageView imgView = (ImageView) view.findViewById(R.id.item_image);
+            EventBus.getDefault().post(new StartActivityEvent((int)imgView.getTag()));
         }
     }
 }

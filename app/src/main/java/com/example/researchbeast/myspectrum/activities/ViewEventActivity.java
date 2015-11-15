@@ -3,12 +3,14 @@ package com.example.researchbeast.myspectrum.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.example.researchbeast.myspectrum.R;
 
 public class ViewEventActivity extends AppCompatActivity {
 
+    private Toolbar mToolbar;
     private TextView dateView;
     private TextView timeView;
     private TextView durationView;
@@ -23,6 +25,10 @@ public class ViewEventActivity extends AppCompatActivity {
         durationView = (TextView)findViewById(R.id.viewEventDuration);
         intensityView = (TextView)findViewById(R.id.viewEventIntensity);
         notesView = (TextView)findViewById(R.id.viewEventNotes);
+        mToolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Event");
         Intent iin= getIntent();
         Bundle b = iin.getExtras();
 

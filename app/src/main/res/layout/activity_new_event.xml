@@ -12,11 +12,26 @@
         android:elevation="4dp"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/date_time_topText"
+        android:text="When did this emotional event start?"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"/>
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/date_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/date_time_topText"
         android:padding="8dp">
         <EditText
             android:id="@+id/date_edittext"
@@ -40,12 +55,20 @@
             android:hint="Time"/>
     </android.support.design.widget.TextInputLayout>
 
+    <TextView
+        android:id="@+id/duration_topText"
+        android:text="If the event has ended, enter the duration (in minutes)."
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_wrapper"
+        android:padding="8dp"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/duration_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time_wrapper"
+        android:layout_below="@id/duration_topText"
         android:padding="8dp">
         <EditText
             android:id="@+id/duration_edittext"
@@ -54,12 +77,20 @@
             android:singleLine="true"
             android:hint="Duration" />
     </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/rating_topText"
+                android:text="Please rate the intensity of your feelings on a scale of 0-10 (10 being unbearable, a sense of impending doom or danger)"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/duration_wrapper"
+                android:padding="8dp"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/rating_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/duration_wrapper"
+        android:layout_below="@id/rating_topText"
         android:padding="8dp">
         <EditText
             android:id="@+id/rating_edittext"
@@ -70,11 +101,21 @@
             android:hint="Rating" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/notes_topText"
+        android:text="Briefly explain any important details (such as your location) and triggers (e.g. fight with mom)."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating_wrapper"
+        android:textSize="16dp"
+        android:padding="8dp"/>
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/notes_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rating_wrapper"
+        android:layout_below="@id/notes_topText"
         android:padding="8dp">
         <EditText
             android:id="@+id/notes_edittext"
@@ -86,15 +127,16 @@
             android:maxLines="150" />
     </android.support.design.widget.TextInputLayout>
 
-
     <Button
         android:id="@+id/save_button"
         android:text="SAVE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/notes_wrapper"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp" />
+        android:padding="8dp"/>
+        </RelativeLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

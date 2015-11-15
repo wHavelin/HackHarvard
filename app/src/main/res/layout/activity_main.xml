@@ -1,6 +1,6 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:oak="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -60,6 +60,18 @@
         android:paddingTop="60dp"
         android:visibility="gone"/>
 
+    <com.example.researchbeast.myspectrum.svg.AnimatedSvgView
+        android:id="@+id/animated_svg_view"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_below="@id/app_name_textview"
+        oak:oakSvgImageSizeX="1080"
+        oak:oakSvgImageSizeY="900"
+        oak:oakSvgTraceTime="3000"
+        oak:oakSvgTraceTimePerGlyph="1000"
+        oak:oakSvgFillStart="1600"
+        oak:oakSvgFillTime="1000" />
 
     <Button
         android:layout_width="wrap_content"

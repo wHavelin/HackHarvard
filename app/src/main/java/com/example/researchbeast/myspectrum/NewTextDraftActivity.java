@@ -56,7 +56,7 @@ public class NewTextDraftActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contacts);
         s.setAdapter(adapter);
 
-        TextView helpText = (TextView) findViewById(R.id.helpText2);
+        TextView helpText = (TextView) findViewById(R.id.help2);
 
         helpText.setText(Html.fromHtml(
                 "Other contacts for less pressing situations include the Asperger’s 24-Hour Hotline 877-723-3422, and these Autism-specific phone lines" +

@@ -8,7 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.researchbeast.myspectrum.NewTextDraftActivity;
 import com.example.researchbeast.myspectrum.R;
+import com.example.researchbeast.myspectrum.ViewTextDraftHistoryActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 import butterknife.Bind;

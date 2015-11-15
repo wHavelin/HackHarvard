@@ -92,7 +92,6 @@ public class ViewHistoryActivity extends AppCompatActivity {
     public void searchHistory(View v){
         Intent i = new Intent(ViewHistoryActivity.this, ViewHistoryActivity.class);
         TextView someView = (TextView)findViewById(keywordToSearch);
-        Log.d("STATE", someView.getText().toString());
         i.putExtra("filter", someView.getText().toString());
         startActivity(i);
     }

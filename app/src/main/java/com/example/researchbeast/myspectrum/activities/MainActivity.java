@@ -1,6 +1,5 @@
 package com.example.researchbeast.myspectrum.activities;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
@@ -14,9 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.researchbeast.myspectrum.NewTextDraftActivity;
 import com.example.researchbeast.myspectrum.R;
-import com.example.researchbeast.myspectrum.ViewTextDraftHistoryActivity;
 import com.example.researchbeast.myspectrum.svg.AnimatedSvgView;
 import com.example.researchbeast.myspectrum.svg.LogoPaths;
 
@@ -24,11 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.newEventBtn) Button mNewEventButton;
-    @Bind(R.id.viewHistoryBtn) Button mViewHistoryButton;
     @Bind(R.id.next_btn) Button mNextButton;
-    @Bind(R.id.newDraftBtn) Button mNewDraftButton;
-    @Bind(R.id.viewDraftBtn) Button mViewDraftButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeText;
     @Bind(R.id.intro_main_textview) TextView mIntroText;
     @Bind(R.id.app_name_textview) TextView mAppNameText;
@@ -54,16 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 mNextButton.setVisibility(View.GONE);
                 mWelcomeText.setVisibility(View.GONE);
                 mIntroText.setVisibility(View.GONE);
-                mViewHistoryButton.setVisibility(View.VISIBLE);
-                mViewHistoryButton.startAnimation(in);
-                mNewEventButton.setVisibility(View.VISIBLE);
-                mNewEventButton.startAnimation(in);
                 mAppNameText.setVisibility(View.VISIBLE);
                 mAppNameText.startAnimation(in);
-                mViewDraftButton.setVisibility(View.VISIBLE);
-                mViewDraftButton.startAnimation(in);
-                mNewDraftButton.setVisibility(View.VISIBLE);
-                mNewDraftButton.startAnimation(in);
                 mSvgView.start();
             }
 
@@ -126,27 +111,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void viewHistory(View v){
-        startActivity(new Intent(MainActivity.this, ViewHistoryActivity.class));
-    }
-
-    public void onNewEventClick(View view) {
-        startActivity(new Intent(this, NewEventActivity.class));
-    }
-
-    public void onNewDraftClick(View view) {
-        startActivity(new Intent(this, NewTextDraftActivity.class));
-    }
-
-    public void onDraftHistoryClick(View v) {
-        startActivity(new Intent(MainActivity.this, ViewTextDraftHistoryActivity.class));
-    }
-
-    public void onLinkListClick(View v){
-        startActivity(new Intent(MainActivity.this, GamesActivity.class));
-    }
-
-    public void onInfoSitesClick(View v){
-        startActivity(new Intent(MainActivity.this, InfoSitesActivity.class));
-    }
 }

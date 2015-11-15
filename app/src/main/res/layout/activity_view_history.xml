@@ -26,7 +26,8 @@
         android:id="@+id/keywordToSearch"
         android:hint="Keyword"
         android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -35,5 +36,6 @@
         android:id="@+id/button"
         android:onClick="searchHistory"
         android:layout_below="@+id/keywordToSearch"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"/>
 </RelativeLayout>

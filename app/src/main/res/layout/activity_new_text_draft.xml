@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.researchbeast.myspectrum.NewTextDraftActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:elevation="4dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <TextView
+        android:id="@+id/newMessageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        android:text="New Message"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/newMessageText"
+        android:padding="8dp"
+        android:text="Contact" />
+
+    <Spinner
+        android:id="@+id/contactsSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/disclaim1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/contactsSpinner"
+        android:layout_centerVertical="true"
+        android:padding="8dp"
+        android:text="Sometimes it’s hard to voice what we want to in times of stress. If your discomfort is at a level you feel you can manage, but you still want to reach out to family, friends, loved ones, or doctors, you may draft a message below."
+        android:textSize="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/disclaim2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/disclaim1"
+        android:layout_centerVertical="true"
+        android:padding="8dp"
+        android:text="Start with a greeting, then explain your situation, its triggers, your location, and any other information you deem necessary."
+        android:textSize="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/disclaim2"
+        android:layout_centerVertical="true"
+        android:padding="8dp"
+        android:text="Message" />
+
+    <EditText
+        android:id="@+id/draftText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/messageText"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:padding="8dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/draftText"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+        <Button
+            android:id="@+id/SaveDraftBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="onSaveClick"
+            android:text="Save Draft" />
+
+        <Button
+            android:id="@+id/SendMessageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:onClick="sendMessage"
+            android:text="Send Message" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/help1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/linearLayout"
+        android:layout_centerVertical="true"
+        android:padding="8dp"
+        android:text="If you are feeling very ill, it may be best to phone for help. It’s faster than communicating via SMS, and is the appropriate method of contact for emergency numbers such as 911."
+        android:textSize="11dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/help2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/help1"
+        android:layout_centerVertical="true"
+        android:padding="8dp"
+        android:text=""
+        android:textSize="11dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+
+</RelativeLayout>

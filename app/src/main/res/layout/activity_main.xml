@@ -1,45 +1,75 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:oak="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/transition">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer_view_container"
+    <LinearLayout
+        android:id="@+id/anim_container"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/welcomeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:text="Welcome"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="84dp"
-            android:text="MySpectrum"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </com.facebook.shimmer.ShimmerFrameLayout>
+            android:paddingTop="20dp"/>
 
-    <Button
+        <TextView
+            android:id="@+id/intro_main_textview"
+            android:text="@string/title_text"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcomeTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+
+        <Button
+            android:id="@+id/next_btn"
+            android:text="Next"
+            android:elevation="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+    <com.example.researchbeast.myspectrum.svg.AnimatedSvgView
+        android:id="@+id/animated_svg_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Event"
-        android:id="@+id/newEventBtn"
-        android:layout_marginBottom="54dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
+        android:layout_centerInParent="true"
+        oak:oakSvgImageSizeX="948"
+        oak:oakSvgImageSizeY="555"
+        oak:oakSvgTraceTime="3000"
+        oak:oakSvgTraceTimePerGlyph="1700"
+        oak:oakSvgFillStart="1600"
+        oak:oakSvgFillTime="990" />
+    <TextView
+        android:text="Life has its ebbs and flows. If you’re on edge, let Buoy help redirect you."
+        android:id="@+id/slogan_text"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View History"
-        android:id="@+id/viewHistoryBtn"
-        android:layout_alignTop="@+id/newEventBtn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@id/animated_svg_view"
+        android:layout_centerInParent="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"/>
+
 </RelativeLayout>

@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">MySpectrum</string>
+    <string name="app_name">BUOY</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_view_history">viewHistory</string>
+    <string name="title_activity_new_event">NewEventActivity</string>
+    <string name="title_text">Our app contains a light amount of color, and may have sound.\n\n\nBefore using our app, you may find it comfortable to\n\n\t-Turn your volume on low or off\n\n\t-Put in headphones to block or dampen ambient noise\n\n\t-Lower you screen brightness\n\n\nWhen you are ready to proceed, please touch the “Next” button below.</string>
+    <string name="title_activity_view_event">ViewEventActivity</string>
+    <string name="title_activity_new_text_draft">NewTextDraft</string>
+    <string name="title_activity_view_text_draft_history">ViewTextDraftHistoryActivity</string>
+    <string name="title_activity_card_view">CardViewActivity</string>
 </resources>

@@ -64,7 +64,7 @@ public class NewEventActivity extends AppCompatActivity {
         Time today = new Time(Time.getCurrentTimezone());
         today.setToNow();
 
-        mDateEditText.setText(String.format("%d / %d / %d", today.month, today.monthDay, today.year));
+        mDateEditText.setText(String.format("%d/%d/%d", today.month, today.monthDay, today.year));
         mTimeEditText.setText(String.format("%d:%d", today.hour, today.minute));
     }
 

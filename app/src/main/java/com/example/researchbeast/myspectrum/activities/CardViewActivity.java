@@ -68,6 +68,9 @@ public class CardViewActivity extends AppCompatActivity {
             case 3:
                 intent = new Intent(this, ViewTextDraftHistoryActivity.class);
                 break;
+            case 4:
+                intent = new Intent(this,InfoSitesActivity.class);
+                break;
             default:
                 intent = null;
         }

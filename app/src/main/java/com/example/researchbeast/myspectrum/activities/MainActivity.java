@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.newEventBtn) Button mNewEventButton;
     @Bind(R.id.viewHistoryBtn) Button mViewHistoryButton;
     @Bind(R.id.next_btn) Button mNextButton;
+    @Bind(R.id.newDraftBtn) Button mNewDraftButton;
+    @Bind(R.id.viewDraftBtn) Button mViewDraftButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeText;
     @Bind(R.id.intro_main_textview) TextView mIntroText;
     @Bind(R.id.app_name_textview) TextView mAppNameText;
@@ -58,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 mNewEventButton.startAnimation(in);
                 mAppNameText.setVisibility(View.VISIBLE);
                 mAppNameText.startAnimation(in);
+                mViewDraftButton.setVisibility(View.VISIBLE);
+                mViewDraftButton.startAnimation(in);
+                mNewDraftButton.setVisibility(View.VISIBLE);
+                mNewDraftButton.startAnimation(in);
                 mSvgView.start();
             }
 

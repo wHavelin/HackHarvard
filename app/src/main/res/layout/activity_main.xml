@@ -110,4 +110,24 @@
         android:layout_toRightOf="@+id/newEventBtn"
         android:layout_toEndOf="@+id/newEventBtn" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Draft"
+        android:id="@+id/newDraftBtn"
+        android:onClick="onNewDraftClick"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/shimmer_view_container"
+        android:layout_toEndOf="@+id/shimmer_view_container" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Drafts"
+        android:id="@+id/viewDraftBtn"
+        android:onClick="onDraftHistoryClick"
+        android:layout_below="@+id/viewHistoryBtn"
+        android:layout_alignLeft="@+id/viewHistoryBtn"
+        android:layout_alignStart="@+id/viewHistoryBtn" />
+
 </RelativeLayout>

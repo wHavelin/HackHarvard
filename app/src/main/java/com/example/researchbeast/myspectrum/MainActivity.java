@@ -54,4 +54,12 @@ public class MainActivity extends AppCompatActivity {
     public void onNewEventClick(View view) {
         startActivity(new Intent(this, NewEventActivity.class));
     }
+
+    public void onNewDraftClick(View view) {
+        startActivity(new Intent(this, NewTextDraftActivity.class));
+    }
+
+    public void onDraftHistoryClick(View v) {
+        startActivity(new Intent(MainActivity.this, ViewTextDraftHistoryActivity.class));
+    }
 }

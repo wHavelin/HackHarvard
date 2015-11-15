@@ -7,31 +7,31 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.researchbeast.myspectrum.models.NewEventModel;
+import com.example.researchbeast.myspectrum.models.NewDraftModel;
 
 import java.util.ArrayList;
 
 /**
- * Created by willi on 11/14/2015.
+ * Created by ResearchBeast on 11/14/2015.
  */
-public class EventListAdapter extends ArrayAdapter<NewEventModel> {
-    public EventListAdapter(Context context, ArrayList<NewEventModel> objects) {
+public class DraftListAdapter extends ArrayAdapter<NewDraftModel> {
+    public DraftListAdapter(Context context, ArrayList<NewDraftModel> objects) {
         super(context, 0, objects);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        NewEventModel event = getItem(position);
+        NewDraftModel event = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.event_layout, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.draft_layout, parent, false);
         }
         // Lookup view for data population
-        TextView datetime = (TextView) convertView.findViewById(R.id.datetime);
-        TextView intensity = (TextView) convertView.findViewById(R.id.intensity);
+        TextView contactView = (TextView) convertView.findViewById(R.id.contactName);
+        TextView messageView = (TextView) convertView.findViewById(R.id.messageText);
         // Populate the data into the template view using the data object
-        datetime.setText(event.date);
-        intensity.setText(event.rating);
+        contactView.setText(event.name);
+        messageView.setText(event.message);
         // Return the completed view to render on screen
         return convertView;
     }

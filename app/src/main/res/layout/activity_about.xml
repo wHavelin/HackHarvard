@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.researchbeast.myspectrum.activities.AboutActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/primaryColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="About BUOY"
         android:id="@+id/textView3"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +40,8 @@
         android:textSize="14dp"
         android:autoText="false"
         android:layout_below="@+id/textView5"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +52,8 @@
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp" />
+        android:layout_marginTop="20dp"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,7 +63,8 @@
         android:id="@+id/textView6"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,7 +76,8 @@
         android:autoText="false"
         android:layout_below="@+id/textView6"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,7 +87,8 @@
         android:id="@+id/textView8"
         android:layout_below="@+id/textView7"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,7 +100,8 @@
         android:autoText="false"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:padding="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -88,6 +109,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="The sources used in this app are from ASD-related societies and medical organizations."
         android:id="@+id/textView11"
-        android:layout_alignParentBottom="true" />
+        android:layout_below="@id/textView10"
+        android:padding="8dp"/>
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

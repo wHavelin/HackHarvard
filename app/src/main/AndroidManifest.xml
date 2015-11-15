@@ -42,36 +42,40 @@
         <activity
             android:name=".NewTextDraftActivity"
             android:label="@string/title_activity_new_text_draft"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activities.CardViewActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.researchbeast.myspectrum.MainActivity" />
+                android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
         </activity>
         <activity
             android:name=".ViewTextDraftHistoryActivity"
             android:label="@string/title_activity_view_text_draft_history"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activities.CardViewActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.researchbeast.myspectrum.MainActivity" />
+                android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
         </activity>
         <activity
             android:name=".activities.CardViewActivity"
             android:label="@string/title_activity_card_view"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.GamesActivity" >
         </activity>
         <activity android:name=".activities.InfoSitesActivity" >
         </activity>
         <activity android:name=".activities.AboutActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
         </activity>
     </application>
 

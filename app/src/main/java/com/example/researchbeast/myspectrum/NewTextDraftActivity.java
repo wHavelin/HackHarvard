@@ -51,14 +51,6 @@ public class NewTextDraftActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contacts);
         s.setAdapter(adapter);
     }
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_new_text_draft, menu);
-        return true;
-    }
-    */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

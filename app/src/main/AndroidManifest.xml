@@ -12,7 +12,6 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name" >
-
         </activity>
         <activity
             android:name=".activities.NewEventActivity"
@@ -66,7 +65,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".activities.GamesActivity" >
             <meta-data
@@ -79,6 +77,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
+        </activity>
+        <activity
+            android:name=".activities.BreathingActivity"
+            android:label="@string/title_activity_breathing"
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.researchbeast.myspectrum.activities.MainActivity" />
         </activity>
     </application>
 

@@ -1,6 +1,7 @@
 package com.example.researchbeast.myspectrum;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -155,5 +156,19 @@ public class NewTextDraftActivity extends AppCompatActivity {
     private void goBack() {
         onBackPressed();
         this.finish();
+    }
+
+    public void sendMessage(View view) {
+        Spinner s = (Spinner) findViewById(R.id.contactsSpinner);
+        EditText text = (EditText) findViewById(R.id.draftText);
+        String contactName = s.getSelectedItem().toString();
+        String phoneNumber = getPhoneNumber(contactName);
+        String message = text.getText().toString();
+
+        Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
+        smsIntent.setType("vnd.android-dir/mms-sms");
+        smsIntent.putExtra("address", phoneNumber);
+        smsIntent.putExtra("sms_body",message);
+        startActivity(smsIntent);
     }
 }

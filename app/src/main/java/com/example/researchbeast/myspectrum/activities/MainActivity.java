@@ -14,7 +14,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.facebook.shimmer.ShimmerFrameLayout;
+import com.example.researchbeast.myspectrum.R;
+import com.example.researchbeast.myspectrum.svg.AndroidLogoPaths;
+import com.example.researchbeast.myspectrum.svg.AnimatedSvgView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

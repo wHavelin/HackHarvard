@@ -1,9 +1,11 @@
-package com.example.researchbeast.myspectrum;
+package com.example.researchbeast.myspectrum.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.example.researchbeast.myspectrum.R;
 
 public class ViewEventActivity extends AppCompatActivity {
 

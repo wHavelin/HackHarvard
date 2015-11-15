@@ -1,4 +1,4 @@
-package com.example.researchbeast.myspectrum;
+package com.example.researchbeast.myspectrum.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,23 +6,20 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.researchbeast.myspectrum.EventListAdapter;
+import com.example.researchbeast.myspectrum.R;
 import com.example.researchbeast.myspectrum.models.NewEventModel;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
-
-import butterknife.Bind;
 
 import static com.example.researchbeast.myspectrum.R.id.eventListView;
 import static com.example.researchbeast.myspectrum.R.id.keywordToSearch;

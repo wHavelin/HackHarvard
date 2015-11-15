@@ -1,4 +1,4 @@
-package com.example.researchbeast.myspectrum;
+package com.example.researchbeast.myspectrum.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.researchbeast.myspectrum.R;
 import com.example.researchbeast.myspectrum.models.NewEventModel;
 import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;

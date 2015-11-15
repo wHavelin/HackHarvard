@@ -49,28 +49,27 @@
 
     </LinearLayout>
 
+    <com.example.researchbeast.myspectrum.svg.AnimatedSvgView
+        android:id="@+id/animated_svg_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        oak:oakSvgImageSizeX="948"
+        oak:oakSvgImageSizeY="555"
+        oak:oakSvgTraceTime="3000"
+        oak:oakSvgTraceTimePerGlyph="1700"
+        oak:oakSvgFillStart="1600"
+        oak:oakSvgFillTime="990" />
     <TextView
-        android:id="@+id/app_name_textview"
-        android:text="BUOY"
-        android:textSize="30sp"
+        android:text="Life has its ebbs and flows. If you’re on edge, let Buoy help redirect you."
+        android:id="@+id/slogan_text"
         android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="60dp"
+        android:layout_below="@id/animated_svg_view"
+        android:layout_centerInParent="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:visibility="gone"/>
-
-    <com.example.researchbeast.myspectrum.svg.AnimatedSvgView
-        android:id="@+id/animated_svg_view"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_below="@id/app_name_textview"
-        oak:oakSvgImageSizeX="1080"
-        oak:oakSvgImageSizeY="900"
-        oak:oakSvgTraceTime="3000"
-        oak:oakSvgTraceTimePerGlyph="1000"
-        oak:oakSvgFillStart="1600"
-        oak:oakSvgFillTime="1000" />
 
 </RelativeLayout>

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.next_btn) Button mNextButton;
     @Bind(R.id.welcomeTextView) TextView mWelcomeText;
     @Bind(R.id.intro_main_textview) TextView mIntroText;
-    @Bind(R.id.app_name_textview) TextView mAppNameText;
+    @Bind(R.id.slogan_text) TextView mSloganText;
     @Bind(R.id.anim_container) LinearLayout mAnimLayout;
     @Bind(R.id.animated_svg_view) AnimatedSvgView mSvgView;
     AppCompatActivity context = this;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        in.setDuration(800);
+        in.setDuration(2000);
         out.setDuration(800);
 
         out.setAnimationListener(new Animation.AnimationListener() {
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 mNextButton.setVisibility(View.GONE);
                 mWelcomeText.setVisibility(View.GONE);
                 mIntroText.setVisibility(View.GONE);
-                mAppNameText.setVisibility(View.VISIBLE);
-                mAppNameText.startAnimation(in);
+                mSloganText.setVisibility(View.VISIBLE);
+                mSloganText.startAnimation(in);
                 mSvgView.start();
             }
 

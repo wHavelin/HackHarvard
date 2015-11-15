@@ -113,7 +113,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Draft"
+        android:text="New Message"
         android:id="@+id/newDraftBtn"
         android:onClick="onNewDraftClick"
         android:layout_alignParentBottom="true"

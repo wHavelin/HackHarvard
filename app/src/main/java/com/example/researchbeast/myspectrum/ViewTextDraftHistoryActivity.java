@@ -41,7 +41,7 @@ public class ViewTextDraftHistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_text_draft_history);
         Toolbar toolbar = (Toolbar) findViewById(R.id.draftToolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("History");
+        getSupportActionBar().setTitle("Message Drafts");
 
         ListView listView = (ListView) findViewById(draftListView);
         listView.setAdapter(adapter);

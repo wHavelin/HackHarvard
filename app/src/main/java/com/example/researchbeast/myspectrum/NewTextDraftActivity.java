@@ -3,38 +3,37 @@ package com.example.researchbeast.myspectrum;
 import android.content.ContentResolver;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.net.Uri;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.SupportActionModeWrapper;
-import android.view.Menu;
-import android.view.MenuItem;
-
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Collections;
-
-import android.provider.ContactsContract.CommonDataKinds.Phone;
 
 import com.example.researchbeast.myspectrum.models.NewDraftModel;
 import com.google.gson.Gson;
 
-public class NewTextDraftActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Collections;
 
+public class NewTextDraftActivity extends AppCompatActivity {
+    private Toolbar mToolbar;
     SharedPreferences mPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_text_draft);
+        mToolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Send a Message");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // shared settings
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);

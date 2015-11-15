@@ -39,7 +39,8 @@
         <activity
             android:name=".NewTextDraftActivity"
             android:label="@string/title_activity_new_text_draft"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.researchbeast.myspectrum.MainActivity" />
@@ -48,7 +49,7 @@
             android:name=".ViewTextDraftHistoryActivity"
             android:label="@string/title_activity_view_text_draft_history"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >>
+            android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.researchbeast.myspectrum.MainActivity" />

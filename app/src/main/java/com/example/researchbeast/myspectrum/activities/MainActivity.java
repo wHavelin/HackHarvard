@@ -15,8 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.researchbeast.myspectrum.R;
-import com.example.researchbeast.myspectrum.svg.AndroidLogoPaths;
 import com.example.researchbeast.myspectrum.svg.AnimatedSvgView;
+import com.example.researchbeast.myspectrum.svg.LogoPaths;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mSvgView.setGlyphStrings(AndroidLogoPaths.BOUY_GLYPHS);
+        mSvgView.setGlyphStrings(LogoPaths.BOUY_GLYPHS);
         mSvgView.setFillPaints(
                 new int[]{255, 255, 255, 255},
                 new int[]{255, 255, 255, 255},

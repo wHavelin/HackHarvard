@@ -141,4 +141,8 @@ public class MainActivity extends AppCompatActivity {
     public void onDraftHistoryClick(View v) {
         startActivity(new Intent(MainActivity.this, ViewTextDraftHistoryActivity.class));
     }
+
+    public void onLinkListClick(View v){
+        startActivity(new Intent(MainActivity.this, GamesActivity.class));
+    }
 }

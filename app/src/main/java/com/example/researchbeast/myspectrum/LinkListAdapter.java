@@ -7,22 +7,21 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.researchbeast.myspectrum.models.NewEventModel;
-import com.example.researchbeast.myspectrum.models.linkModel;
+import com.example.researchbeast.myspectrum.models.LinkModel;
 
 import java.util.ArrayList;
 
 /**
  * Created by willi on 11/14/2015.
  */
-public class linkListAdapter extends ArrayAdapter<linkModel> {
-    public linkListAdapter(Context context, ArrayList<linkModel> objects) {
+public class LinkListAdapter extends ArrayAdapter<LinkModel> {
+    public LinkListAdapter(Context context, ArrayList<LinkModel> objects) {
         super(context, 0, objects);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        linkModel link = getItem(position);
+        LinkModel link = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.link_layout, parent, false);

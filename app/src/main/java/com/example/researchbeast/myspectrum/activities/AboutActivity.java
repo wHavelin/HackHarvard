@@ -1,9 +1,11 @@
 package com.example.researchbeast.myspectrum.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class aboutActivity extends AppCompatActivity {
+import com.example.researchbeast.myspectrum.R;
+
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

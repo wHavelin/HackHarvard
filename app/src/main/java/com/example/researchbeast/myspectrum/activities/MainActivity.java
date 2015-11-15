@@ -147,6 +147,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onInfoSitesClick(View v){
-        startActivity(new Intent(MainActivity.this, infoSitesActivity.class));
+        startActivity(new Intent(MainActivity.this, InfoSitesActivity.class));
     }
 }

@@ -8,22 +8,22 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.researchbeast.myspectrum.LinkListAdapter;
 import com.example.researchbeast.myspectrum.R;
-import com.example.researchbeast.myspectrum.linkListAdapter;
-import com.example.researchbeast.myspectrum.models.linkModel;
+import com.example.researchbeast.myspectrum.models.LinkModel;
 
 import java.util.ArrayList;
 
-public class infoSitesActivity extends AppCompatActivity {
+public class InfoSitesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final ArrayList<linkModel> linkArray = new ArrayList<linkModel>();
-        linkArray.add(new linkModel("https://www.autismspeaks.org/", "Autism Speaks"));
-        linkArray.add(new linkModel("https://www.autism-society.org", "Autism Society"));
-        linkArray.add(new linkModel("http://www.autism.com", "Autism.com"));
-        linkArray.add(new linkModel("http://www.ahany.org", "Asperger Syndrome and High Functioning Autism Association"));
-        linkListAdapter adapter = new linkListAdapter(this, linkArray);
+        final ArrayList<LinkModel> linkArray = new ArrayList<LinkModel>();
+        linkArray.add(new LinkModel("https://www.autismspeaks.org/", "Autism Speaks"));
+        linkArray.add(new LinkModel("https://www.autism-society.org", "Autism Society"));
+        linkArray.add(new LinkModel("http://www.autism.com", "Autism.com"));
+        linkArray.add(new LinkModel("http://www.ahany.org", "Asperger Syndrome and High Functioning Autism Association"));
+        LinkListAdapter adapter = new LinkListAdapter(this, linkArray);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_sites);
 

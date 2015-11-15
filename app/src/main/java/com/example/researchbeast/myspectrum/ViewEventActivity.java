@@ -27,15 +27,15 @@ public class ViewEventActivity extends AppCompatActivity {
         if(b!=null)
         {
             String date =(String) b.get("date");
-            dateView.setText(date);
+            dateView.setText("Date: " + date);
             String time =(String) b.get("time");
-            timeView.setText(time);
+            timeView.setText("Time: " + time);
             String duration =(String) b.get("duration");
-            durationView.setText(duration);
+            durationView.setText("Duration: " + duration);
             String intensity =(String) b.get("intensity");
-            intensityView.setText(intensity);
+            intensityView.setText("Intensity: " + intensity);
             String notes =(String) b.get("notes");
-            notesView.setText(notes);
+            notesView.setText("Notes: " + notes);
         }
 
     }

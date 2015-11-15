@@ -13,8 +13,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Intensity"
         android:id="@+id/viewEventIntensity"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp" />
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/viewEventTime"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +37,8 @@
         android:text="Time"
         android:id="@+id/viewEventTime"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/viewEventIntensity"
+        android:layout_alignEnd="@+id/viewEventIntensity" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,9 +46,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Duration"
         android:id="@+id/viewEventDuration"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@+id/viewEventIntensity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,7 +58,7 @@
         android:layout_below="@+id/viewEventIntensity"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="65dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

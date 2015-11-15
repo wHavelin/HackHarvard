@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 public class NewEventActivity extends AppCompatActivity {
     @Bind(R.id.date_edittext) EditText mDateEditText;
     @Bind(R.id.time_edittext) EditText mTimeEditText;
+    @Bind(R.id.duration_edittext) EditText mDurationEditText;
     @Bind(R.id.rating_edittext) EditText mRatingEditText;
     @Bind(R.id.notes_edittext) EditText mNotesEditText;
     @Bind(R.id.save_button) Button mSaveButton;
@@ -44,9 +45,10 @@ public class NewEventActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 String date = mDateEditText.getText().toString();
                 String time = mTimeEditText.getText().toString();
+                String duration = mDurationEditText.getText().toString();
                 String rating = mRatingEditText.getText().toString();
                 String notes = mNotesEditText.getText().toString();
-                NewEventModel eventModel = new NewEventModel(date,time,"0", rating,notes);
+                NewEventModel eventModel = new NewEventModel(date,time,duration, rating,notes);
                 String json = gson.toJson(eventModel);
                 mPrefEdit.putString(date + time, json);
                 mPrefEdit.commit();

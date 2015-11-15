@@ -14,7 +14,8 @@
         android:id="@+id/date_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/toolbar"
+        android:padding="8dp">
         <EditText
             android:id="@+id/date_edittext"
             android:singleLine="true"
@@ -27,7 +28,8 @@
         android:id="@+id/time_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date_wrapper">
+        android:layout_below="@id/date_wrapper"
+        android:padding="8dp">
         <EditText
             android:id="@+id/time_edittext"
             android:layout_width="match_parent"
@@ -36,27 +38,52 @@
             android:hint="Time"/>
     </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/duration_edittext"
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/duration_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:hint="Duration"
-        android:layout_below="@+id/rating_wrapper"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@id/time_wrapper"
+        android:padding="8dp">
+        <EditText
+            android:id="@+id/duration_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="Duration" />
+    </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/rating_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time_wrapper"></android.support.design.widget.TextInputLayout>
+        android:layout_below="@id/duration_wrapper"
+        android:padding="8dp">
+        <EditText
+            android:id="@+id/rating_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:hint="Rating" />
 
+    </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
         android:id="@+id/notes_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rating_wrapper"></android.support.design.widget.TextInputLayout>
+        android:layout_below="@id/rating_wrapper"
+        android:padding="8dp">
+        <EditText
+            android:id="@+id/notes_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notes"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="5000"
+            android:maxLines="150" />
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:id="@+id/save_button"
@@ -67,27 +94,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="52dp" />
 
-    <EditText
-        android:id="@+id/notes_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Notes"
-        android:inputType="textCapSentences|textMultiLine"
-        android:maxLength="5000"
-        android:maxLines="150"
-        android:layout_below="@+id/rating_edittext"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/rating_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:singleLine="true"
-        android:hint="Rating"
-        android:layout_below="@+id/duration_edittext"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

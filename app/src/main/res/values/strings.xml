@@ -9,4 +9,5 @@
     <string name="title_activity_view_event">ViewEventActivity</string>
     <string name="title_activity_new_text_draft">NewTextDraft</string>
     <string name="title_activity_view_text_draft_history">ViewTextDraftHistoryActivity</string>
+    <string name="title_activity_card_view">CardViewActivity</string>
 </resources>

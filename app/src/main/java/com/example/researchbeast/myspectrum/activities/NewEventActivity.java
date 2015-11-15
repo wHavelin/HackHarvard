@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.example.researchbeast.myspectrum.R;
 import com.example.researchbeast.myspectrum.models.NewEventModel;
-import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;
 
 import butterknife.Bind;
@@ -32,7 +31,6 @@ public class NewEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event);
-        Stetho.initializeWithDefaults(this);
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);

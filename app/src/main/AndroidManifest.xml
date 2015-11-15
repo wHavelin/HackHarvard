@@ -61,18 +61,21 @@
             android:name=".activities.CardViewActivity"
             android:label="@string/title_activity_card_view"
             android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
-        <activity android:name=".activities.GamesActivity" >
-        </activity>
-        <activity android:name=".activities.InfoSitesActivity" >
-        </activity>
-        <activity android:name=".activities.AboutActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".activities.GamesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />
+        </activity>
+        <activity android:name=".activities.InfoSitesActivity" >
+        </activity>
+        <activity android:name=".activities.AboutActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.researchbeast.myspectrum.activities.CardViewActivity" />

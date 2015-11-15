@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,7 +15,11 @@ import com.example.researchbeast.myspectrum.models.LinkModel;
 
 import java.util.ArrayList;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class GamesActivity extends AppCompatActivity {
+    @Bind(R.id.toolbar) Toolbar mToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,10 @@ public class GamesActivity extends AppCompatActivity {
         LinkListAdapter adapter = new LinkListAdapter(this, linkArray);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_games);
+        ButterKnife.bind(this);
+        setSupportActionBar(mToolBar);
+        getSupportActionBar().setTitle("Links");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ListView listView = (ListView) findViewById(R.id.gamesList);
         listView.setAdapter(adapter);

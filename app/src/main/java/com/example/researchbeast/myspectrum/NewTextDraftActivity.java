@@ -10,15 +10,20 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.researchbeast.myspectrum.models.NewDraftModel;
 import com.google.gson.Gson;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,6 +55,13 @@ public class NewTextDraftActivity extends AppCompatActivity {
         Spinner s = (Spinner) findViewById(R.id.contactsSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, contacts);
         s.setAdapter(adapter);
+
+        TextView helpText = (TextView) findViewById(R.id.helpText2);
+
+        helpText.setText(Html.fromHtml(
+                "Other contacts for less pressing situations include the Asperger’s 24-Hour Hotline 877-723-3422, and these Autism-specific phone lines" +
+                        "<a href=\"https://www.autismspeaks.org/family-services/crisis-intervention-resources \">https://www.autismspeaks.org/family-services/crisis-intervention-resources </a>"));
+        helpText.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     @Override

@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="New Draft"
+        android:text="New Message"
         android:id="@+id/textView8"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/toolbar" />
@@ -57,16 +57,27 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true" />
 
-    <Button
-        android:padding="8dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Draft"
-        android:id="@+id/SaveDraftBtn"
-        android:layout_below="@+id/draftText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:nestedScrollingEnabled="false"
-        android:onClick="onSaveClick" />
+        android:orientation="horizontal"
+        android:layout_below="@id/draftText"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp">
+        <Button
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Draft"
+            android:id="@+id/SaveDraftBtn"
+            android:onClick="onSaveClick" />
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/SendMessageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Message"/>
+    </LinearLayout>
+
 
 </RelativeLayout>

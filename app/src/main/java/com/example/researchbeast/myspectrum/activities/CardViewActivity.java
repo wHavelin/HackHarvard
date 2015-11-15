@@ -71,6 +71,9 @@ public class CardViewActivity extends AppCompatActivity {
             case 4:
                 intent = new Intent(this,InfoSitesActivity.class);
                 break;
+            case 5:
+                intent = new Intent(this,GamesActivity.class);
+                break;
             default:
                 intent = null;
         }

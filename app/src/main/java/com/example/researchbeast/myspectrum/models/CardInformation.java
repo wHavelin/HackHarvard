@@ -8,5 +8,6 @@ public class CardInformation {
     new CardModel("Event History","View date and intensity of previous events",R.drawable.ic_find_in_page_black_48dp),
     new CardModel("Send a Message","Send or save text messages",R.drawable.ic_mail_black_48dp),
     new CardModel("Message Drafts","View saved message drafts",R.drawable.ic_drafts_black_48dp),
-    new CardModel("Links","Informational links to learn more about autism",R.drawable.ic_computer_black_48dp)};
+    new CardModel("Links","Informational links to learn more about autism",R.drawable.ic_computer_black_48dp),
+    new CardModel("Games/Links","Games and websites to help you relax",R.drawable.ic_mood_black_48dp)};
 }

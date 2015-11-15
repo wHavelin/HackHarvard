@@ -22,6 +22,9 @@ public class StartActivityEvent {
             case R.drawable.ic_computer_black_48dp:
                 this.resourceId = 4;
                 break;
+            case R.drawable.ic_mood_black_48dp:
+                this.resourceId = 5;
+                break;
         }
 
     }

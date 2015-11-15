@@ -1,8 +1,10 @@
 package com.example.researchbeast.myspectrum.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.app_name_textview) TextView mAppNameText;
     @Bind(R.id.anim_container) LinearLayout mAnimLayout;
     @Bind(R.id.animated_svg_view) AnimatedSvgView mSvgView;
+    AppCompatActivity context = this;
 
     final Animation in = new AlphaAnimation(0.0f, 1.0f);
 
@@ -56,6 +59,27 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationRepeat(Animation animation) {
             }
 
+        });
+        in.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(context, CardViewActivity.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        context.finish();
+                    }
+                }, 2500);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
         });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
